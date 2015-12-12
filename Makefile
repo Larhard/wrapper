@@ -7,4 +7,8 @@ all: $(TARGET)
 clean:
 	$(RM) $(TARGET) *.o
 
-.PHONY: clean
+sticky: $(TARGET)
+	chown root:wheel $<
+	chmod 6110 $<
+
+.PHONY: clean sticky
